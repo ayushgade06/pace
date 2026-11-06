@@ -12,12 +12,13 @@ public class ParserTests
         var s = UsageParser.Parse(File.ReadAllText("Fixtures/usage.json"));
         Assert.Equal(["session", "weekly_all", "weekly_scoped"], s.Limits.Select(l => l.Kind));
         Assert.Equal("Current session (5h)", s.Limits[0].Title);
-        Assert.Equal(8, s.Limits[0].Percent);
-        Assert.Equal(DateTimeOffset.Parse("2026-11-06T09:40:00.133896+00:00"), s.Limits[0].ResetsAt);
+        Assert.Equal(37, s.Limits[0].Percent);
+        Assert.Equal(DateTimeOffset.Parse("2026-01-15T14:20:00.25+00:00"), s.Limits[0].ResetsAt);
         Assert.Equal("Weekly · all models", s.Limits[1].Title);
         Assert.Equal("Weekly · Fable", s.Limits[2].Title);
-        // 0% surfaces hidden
-        Assert.Equal("Claude Code", Assert.Single(s.Breakdown).DisplayName);
+        Assert.Equal(12, s.Limits[2].Percent);
+        // 0% surfaces (Cowork) hidden
+        Assert.Equal(["Claude Code", "Chats"], s.Breakdown.Select(b => b.DisplayName));
     }
 
     [Theory]

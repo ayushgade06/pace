@@ -1,18 +1,19 @@
 {
- "five_hour": {"utilization": 8.0, "resets_at": "2026-11-06T09:40:00.133896+00:00"},
- "seven_day": {"utilization": 2.0, "resets_at": "2026-11-12T21:00:00.133913+00:00"},
+ "five_hour": {"utilization": 37.0, "resets_at": "2026-01-15T14:20:00.250000+00:00"},
+ "seven_day": {"utilization": 21.0, "resets_at": "2026-01-20T18:00:00.250000+00:00"},
  "seven_day_opus": null,
  "limits": [
-  {"kind": "session", "group": "session", "percent": 8, "severity": "normal", "resets_at": "2026-11-06T09:40:00.133896+00:00", "scope": null, "is_active": true},
-  {"kind": "weekly_all", "group": "weekly", "percent": 2, "severity": "normal", "resets_at": "2026-11-12T21:00:00.133913+00:00", "scope": null, "is_active": false},
-  {"kind": "weekly_scoped", "group": "weekly", "percent": 0, "severity": "normal", "resets_at": "2026-11-12T21:00:00+00:00",
+  {"kind": "session", "group": "session", "percent": 37, "severity": "normal", "resets_at": "2026-01-15T14:20:00.250000+00:00", "scope": null, "is_active": true},
+  {"kind": "weekly_all", "group": "weekly", "percent": 21, "severity": "normal", "resets_at": "2026-01-20T18:00:00.250000+00:00", "scope": null, "is_active": false},
+  {"kind": "weekly_scoped", "group": "weekly", "percent": 12, "severity": "normal", "resets_at": "2026-01-20T18:00:00+00:00",
    "scope": {"model": {"id": null, "display_name": "Fable"}, "surface": null}, "is_active": false}
  ],
  "seven_day_breakdown": {
-  "as_of": "2026-11-06T05:12:32.158815+00:00",
+  "as_of": "2026-01-15T10:00:00+00:00",
   "rows": [
-   {"key": "claude_code", "display_name": "Claude Code", "percent": 100},
-   {"key": "chat", "display_name": "Chats", "percent": 0}
+   {"key": "claude_code", "display_name": "Claude Code", "percent": 64},
+   {"key": "chat", "display_name": "Chats", "percent": 36},
+   {"key": "cowork", "display_name": "Cowork", "percent": 0}
   ]
  }
 }
