@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <!-- WinForms only for NotifyIcon (tray) + System.Drawing icon rendering: ships with the Windows Desktop runtime, no NuGet package. -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Pace</AssemblyName>
+    <RootNamespace>Pace</RootNamespace>
+    <Version>1.0.0</Version>
+    <ApplicationIcon>Assets/Pace.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Pace.Tests" />
+    <!-- WinForms is only used in Tray.cs; keep its namespaces from clashing with WPF types. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+    <Using Include="System.IO" />
+    <Using Include="System.Net.Http" />
+  </ItemGroup>
+</Project>
